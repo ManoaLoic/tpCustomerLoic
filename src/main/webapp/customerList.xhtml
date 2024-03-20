@@ -22,21 +22,28 @@
                 </f:facet>
                 <h:outputText value="#{item.name}"/>
             </h:column>
-            
+
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Ville"/>
                 </f:facet>
                 <h:outputText value="#{item.city}"/>
             </h:column>
-            
+
             <h:column>
                 <f:facet name="header">
                     <h:outputText value="Discount"/>
                 </f:facet>
-                <h:outputText value="#{item.discount}"/>
+                <h:outputText value="#{item.discount.code} : #{item.discount.rate} %" />
             </h:column>
             
+            <h:column>
+                <f:facet name="header">
+                    <h:outputText value="Zip"/>
+                </f:facet>
+                <h:outputText value="#{item.zip.zipCode}"/>
+            </h:column>
+
         </h:dataTable>
     </h:body>
 </html>

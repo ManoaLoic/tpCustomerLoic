@@ -27,6 +27,10 @@ public class CustomerManager {
         em.persist(customer);
     }
 
+    public Customer findById(int idCustomer) {
+        return em.find(Customer.class, idCustomer);
+    }
+
     public List<Customer> getAllCustomers() {
         Query query = em.createNamedQuery("Customer.findAll");
         return query.getResultList();

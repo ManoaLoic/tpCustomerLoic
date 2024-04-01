@@ -30,6 +30,8 @@ import java.util.Collection;
 @XmlRootElement
 @NamedQueries({
     @NamedQuery(name = "Discount.findAll", query = "SELECT d FROM Discount d"),
+    @NamedQuery(name = "Discount.findAllOrderByRateASC", query = "SELECT d FROM Discount d ORDER BY d.rate ASC"),
+    @NamedQuery(name = "Discount.findAllOrderByRateDESC", query = "SELECT d FROM Discount d ORDER BY d.rate DESC"),
     @NamedQuery(name = "Discount.findByCode", query = "SELECT d FROM Discount d WHERE d.code = :code"),
     @NamedQuery(name = "Discount.findByRate", query = "SELECT d FROM Discount d WHERE d.rate = :rate")})
 public class Discount implements Serializable {
@@ -103,5 +105,5 @@ public class Discount implements Serializable {
     public String toString() {
         return "tp.customer.tpcustomerloic.entity.Discount[ code=" + code + " ]";
     }
-    
+
 }
